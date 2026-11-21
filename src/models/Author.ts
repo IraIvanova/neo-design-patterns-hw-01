@@ -1,7 +1,7 @@
-import {Book} from "./Book";
+import {AbstractBook} from "./AbstractBook";
 
 export class Author {
-  private books: Book[] = [];
+  private books: AbstractBook[] = [];
 
   constructor(private readonly _name: string) {
   }
@@ -10,7 +10,7 @@ export class Author {
     return this._name;
   }
 
-  public addBook(book: Book) {
+  public addBook(book: AbstractBook) {
     this.books.push(book);
   }
 }

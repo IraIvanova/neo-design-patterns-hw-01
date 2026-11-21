@@ -2,15 +2,14 @@ import {Author} from "./Author";
 import {AbstractBook} from "./AbstractBook";
 import {Copy} from "./Copy";
 import {Reader} from "./Reader";
-import {Book} from "./Book";
 
 export class Library {
     private authors: Author[] = [];
-    private books: Book[] = [];
+    private books: AbstractBook[] = [];
     private copies: Copy[] = [];
     private readers: Reader[] = [];
 
-    public addBook(book: Book) {
+    public addBook(book: AbstractBook) {
         this.books.push(book);
     }
 
@@ -23,7 +22,7 @@ export class Library {
     }
 
     public addReader(reader: Reader): boolean {
-        if (this.readers.some((r: Reader) => r.getId() === reader.getId())) {
+        if (this.readers.some((r: Reader) => r.id === reader.id)) {
             return false;
         }
 

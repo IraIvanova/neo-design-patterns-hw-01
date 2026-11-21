@@ -4,6 +4,7 @@ import {Author} from "./Author";
 export class EBook extends AbstractBook{
     constructor(name: string, year: number,  author: Author, private readonly _url: string) {
         super(name, year, author);
+        author.addBook(this);
     }
 
     get url(): string {
