@@ -30,8 +30,4 @@ export class Reader {
 
         return true;
     }
-
-    public getId(): string {
-        return this.id;
-    }
 }
